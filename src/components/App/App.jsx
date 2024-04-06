@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Description from '../Description/Description';
-import Notification from './Notification/Notification';
-import Options from './Options/Options';
-import Feedback from './Feedback/Feedback';
+import Notification from '../Notification/Notification';
+import Options from '../Options/Options';
+import Feedback from '../Feedback/Feedback';
 import css from './App.module.css';
 
 export default function App() {
