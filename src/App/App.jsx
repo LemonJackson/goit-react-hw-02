@@ -3,7 +3,7 @@ import Description from '../Description/Description';
 import Notification from '../Notification/Notification';
 import Options from '../Options/Options';
 import Feedback from '../Feedback/Feedback';
-import './App.css';
+import css from './App.module.css';
 
 export default function App() {
   const [feedback, setFeedback] = useState({
@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <section className={css.section}>
       <Description />
       <Options
         updateFeedback={updateFeedback}
@@ -53,6 +53,6 @@ export default function App() {
       ) : (
         <Notification message="No feedback yet" />
       )}
-    </div>
+    </section>
   );
 }

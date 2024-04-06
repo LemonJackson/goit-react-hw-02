@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* background-color: gainsboro; */
+  background-color: gainsboro;
   padding: 50px;
 }
 
@@ -49,9 +49,9 @@ a {
   outline: none;
 }
 
-/* button {
+button {
   border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
-} */
+}

@@ -1,5 +1,3 @@
-import css from './Feedback.module.css';
-
 export default function Feedback({ feedback, totalFeedback }) {
   const percentagePositive = Math.round((feedback.good / totalFeedback) * 100);
 

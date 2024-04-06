@@ -1,0 +1,6 @@
+.title {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

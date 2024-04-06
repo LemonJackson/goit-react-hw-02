@@ -6,11 +6,29 @@ export default function Options({
   totalFeedback,
 }) {
   return (
-    <div>
-      <button onClick={() => updateFeedback('good')}>Good</button>
-      <button onClick={() => updateFeedback('neutral')}>Neutral</button>
-      <button onClick={() => updateFeedback('bad')}>Bad</button>
-      {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
-    </div>
+    <ul className={css.list}>
+      <li className={css.item}>
+        <button className={css.btn} onClick={() => updateFeedback('good')}>
+          Good
+        </button>
+      </li>
+      <li className={css.item}>
+        <button className={css.btn} onClick={() => updateFeedback('neutral')}>
+          Neutral
+        </button>
+      </li>
+      <li className={css.item}>
+        <button className={css.btn} onClick={() => updateFeedback('bad')}>
+          Bad
+        </button>
+      </li>
+      <li className={css.item}>
+        {totalFeedback > 0 && (
+          <button className={css.btn} onClick={resetFeedback}>
+            Reset
+          </button>
+        )}
+      </li>
+    </ul>
   );
 }
