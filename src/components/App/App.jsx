@@ -6,18 +6,19 @@ import Feedback from '../Feedback/Feedback';
 import css from './App.module.css';
 
 export default function App() {
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  });
+  const [feedback, setFeedback] = useState(() => {
+    const savedClicks = window.localStorage.getItem('feedback');
 
-  useEffect(() => {
-    const savedFeedback = localStorage.getItem('feedback');
-    if (savedFeedback) {
-      return setFeedback(JSON.parse(savedFeedback));
+    if (savedClicks !== null) {
+      return JSON.parse(savedClicks);
     }
-  }, []);
+
+    return {
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    };
+  });
 
   useEffect(() => {
     localStorage.setItem('feedback', JSON.stringify(feedback));
@@ -31,6 +32,7 @@ export default function App() {
   };
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  const percentagePositive = Math.round((feedback.good / totalFeedback) * 100);
 
   const resetFeedback = () => {
     setFeedback({
@@ -49,7 +51,11 @@ export default function App() {
         totalFeedback={totalFeedback}
       />
       {totalFeedback > 0 ? (
-        <Feedback feedback={feedback} totalFeedback={totalFeedback} />
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          percentagePositive={percentagePositive}
+        />
       ) : (
         <Notification message="No feedback yet" />
       )}

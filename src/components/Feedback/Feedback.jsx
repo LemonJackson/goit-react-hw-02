@@ -1,6 +1,8 @@
-export default function Feedback({ feedback, totalFeedback }) {
-  const percentagePositive = Math.round((feedback.good / totalFeedback) * 100);
-
+export default function Feedback({
+  feedback,
+  totalFeedback,
+  percentagePositive,
+}) {
   return (
     <ul>
       <li>Good: {feedback.good}</li>
